@@ -8,7 +8,10 @@ const server = express();
 server.use(helmet());
 
 server.get("/", (req, res) => {
-  res.status(200).json({environment: process.env.NODE_ENV})
+  res.status(200).json({
+    environment: process.env.NODE_ENV,
+    port: process.env.PORT
+  })
 })
 
 server.use('/api', apiRouter);
