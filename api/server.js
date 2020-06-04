@@ -10,7 +10,8 @@ server.use(helmet());
 server.get("/", (req, res) => {
   res.status(200).json({
     environment: process.env.NODE_ENV,
-    port: process.env.PORT
+    port: process.env.PORT,
+    greeting: process.env.GREET
   })
 })
 
